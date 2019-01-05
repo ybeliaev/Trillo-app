@@ -1,13 +1,16 @@
 @import './components/normalize';
-@import './components/base';
 @import './components/variables';
-@import './components/utilities';
-@import './components/mixins';
+@import './components/base';
+
+@import './components/layout';
+
+// @import './components/utilities';
+// @import './components/mixins';
 
 
-@import './components/button';
-@import './components/grid';
-@import './components/form';
-@import './layout/popap';
+// @import './components/button';
+// @import './components/grid';
+// @import './components/form';
+
 
 
