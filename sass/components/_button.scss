@@ -1,63 +1,47 @@
 .btn {
-    &,
-    &:link,
-    &:visited {
-        position: relative;
-        display: inline-block;
-        text-transform: uppercase;
-        text-decoration: none;
-        padding: 1.5rem 4rem;    
-        border-radius: 10rem;     
-        font-size: 1.6rem;  
-        border: none;  // remember
-        cursor: pointer;
-    }
-    &:active,
-    &:focus {
-        outline: none;
-        transform: translateY(-1px);
-        box-shadow: 0 .5rem 1rem rgba($color-black,.2);
-    }    
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    border-radius: 100px;
+    border: none;
+    background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
 
-    &--white {
-		background-color: $colorWhite;
-		color: $colorGrey;
-		&::after {
-			background-color: $colorWhite;
-        }
-    }
-    &--green {
-		background-color: $colorMediumGreen;
-		color: $colorWhite;
-		&::after {
-			background-color: $colorMediumGreen;
-        }
-    }
-}
-.btn-text {
-    &,
-    &:link,
-    &:visited {
-        font-size: $default-font-size;
-        color: $colorMediumGreen;
+    & > * {
         display: inline-block;
-        text-decoration: none;
-        border-bottom: 1px solid $colorMediumGreen;
-        padding: 3px;
+        height: 100%;
+        width: 100%;
         transition: all .2s;
     }
 
-    &:hover {
-        background-color: $colorMediumGreen;
-        color: $colorWhite;
-        box-shadow: 0 1rem 2rem rgba($color-black, .15);
-        transform: translateY(-2px);
+    &__visible {
+        padding: 2rem 7.5rem;
     }
 
-    &:active,
+    &__invisible {
+        position: absolute;
+        padding: 2rem 0;
+        left: 0;
+        top: -100%;
+    }
+
+    &:hover {
+        background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark));
+    }
+
+    &:hover &__visible {
+        transform: translateY(100%);
+    }
+
+    &:hover &__invisible {
+        top: 0;
+    }
+
     &:focus {
-        box-shadow: 0 .5rem 1rem rgba($color-black, .15);
-        transform: translateY(0);        
-        
+        outline: none;
+        animation: pulsate 1s infinite;
     }
 }
